@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dice Roller</title>
-    <link rel="stylesheet" href="./index.css">
-    <script src ="./index.js" defer></script>
-</head>
-<body>
-
-    <h1 class = "titles">Dice Roller</h1>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <h1 class="titles">Dice Roller</h1>
+    <div class="divider" id="goodLooking">
+      <p class="parag">Number of dice:</p>
+      <input type="number" name="" id="input" placeholder="Numbers only" />
+      <button class="btn" id="button">Roll the dice!</button>
+    </div>
     <div class="divider">
-        <p>Number of dice: </p>
-        <input type="number" name="" id="input" placeHolder="Numbers only">
-        <button class = "btn" id = "button">Roll the dice!</button>
-
-    </div>
-    <div class = "divider">
-
-        <p id = "dice-para"></p>
-        <p id = "sum-para">Sum =</p>
+      <p class="parag" id="dice-para"></p>
+      <p class="parag" id="sum-para">Sum =</p>
     </div>
 
-    <div class = "divider">
-        <h2 class = "titles" >History</h2>
-
-        <ul id ="unOrder">
-
-        </ul>
+    <div class="divider">
+      <h2 class="titles">History</h2>
+      <ul id="unOrder"></ul>
     </div>
-    
-</body>
+  </body>
 </html>

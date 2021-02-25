@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  margin: 50px;
+  padding: 20px;
+  border: 1px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.titles {
+  font-size: xx-large;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.divider {
+  margin: 40px;
+  padding: 20px;
+  border: 3px solid #bada55;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 2.2px rgba(0, 0, 0, 0.053),
+    0 9.5px 5.3px rgba(0, 0, 0, 0.077), 0 17.9px 10px rgba(0, 0, 0, 0.095),
+    0 31.9px 17.9px rgba(0, 0, 0, 0.113), 0 59.7px 33.4px rgba(0, 0, 0, 0.137),
+    0 143px 80px rgba(0, 0, 0, 0.19);
+}
+
+.parag {
+  font-size: 32px;
+  text-align: center;
+  text-shadow: 4px 4px 4px #b9e094;
+}
+
+#dice-para {
+  font-size: 72px;
+  margin-left: 60px;
+}
+#sum-para {
+  margin-left: 60px;
+}
+
+#unOrder {
+  font-family: "Roboto", sans-serif;
+  font-size: 68px;
+  margin-left: 60px;
+}
+
+#goodLooking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#input,
+#button {
+  width: 95%;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
