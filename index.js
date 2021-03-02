@@ -1,60 +1,69 @@
-// Loading the DOM
+/* SMART GOAL
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Declaring Global variables, to reuse
+    1.- Refactor my code using the suggestions that Myra provided. So by 12:45 pm 3/2/21 I can push to GitHub
+          // Completed
+    
+    2.- Strectch Goals:
+        * when I enter an invalid number of dice, like -2, an error message displays prompting me to enter a valid number.
+          // Completed
+
+        * Below my dice history list, I can see statistics about my roll history like the average sum, the minimum sum, and the maximum sum
+        * My application can detect if I roll a straight, a three of a kind, a four of a kind, or a double pair. 
+
+
+*/
+
+// Loading the DOM
+document.addEventListener('DOMContentLoaded', (eve) => {
+  eve.preventDefault()
+
+const restart = () => {
   let dados = ['&#9856;', '&#9857;', '&#9858;', '&#9859;', '&#9860;', '&#9861;']
+  let cubic = {fila:'', sum:0}
   let clickCounter = 0
   let container = ''
-  let sum = 0
 
   // Assigning the variables and pointing the elements
   let history = document.getElementById('unOrder')
   let dice = document.getElementById('dice-para')
   let suma = document.getElementById('sum-para')
   let roll = document.getElementById('button')
-  let n = document.getElementById('input')
+  //let n = document.getElementById('input')
 
-  // Element button is listening to event 'click'
-  roll.addEventListener('click', () => {
-    // Verifying if this is the Second click
+  roll.addEventListener('click', (eve) => {
+    eve.preventDefault()
+
+    if (parseInt(document.getElementById('input').value) <= 0){
+      return window.alert('Please enter a positive number')    
+    }
+
     if (clickCounter !== 0) {
-      // Asigning a variable for new element 'li'
       let listItem = document.createElement('li')
-      // Adding 'li' to parenNode 'ul' #unOrder
       history.appendChild(listItem)
-      // Changing li content with the previous diceRoll result
       listItem.textContent = container
     }
 
-    // Changing the innerHtml of 'p' #dice-para and show some dice
-    // using function diceRoll with @param n.value('input'#input) @param dados[]
-    dice.innerHTML = diceRoll(n.value, dados)
+    dice.innerHTML = diceRoll(document.getElementById('input').value, dados)['fila']
 
-    // Changing the content of 'p'#sum-para with the sum of the dice
-    suma.textContent = `Sum = ${sum}`
+    suma.textContent = `Sum = ${cubic.sum}`
 
-    // Storing the values for History
-    container = `${dice.innerHTML}=${sum}`
+    container = `${dice.innerHTML}=${cubic.sum}`
 
-    // Restarting the sum to 0 and add 1 to clickCounter
-    sum = 0
+    cubic.sum = 0
     clickCounter += 1
   })
 
-  // Function that returns a string selected randomly from an array dados[]
-
   function diceRoll () {
-    // Declaring the vars to be local
-    let fila = ''
-    let faceValue = 0
-
-    // Using a loop to create a string and sum the values depending of
-    // user parameter @param n.value (#input)
-    for (let i = 1; i <= n.value; i++) {
-      faceValue = Math.floor(Math.random(0) * Math.floor(5))
-      sum += faceValue + 1
-      fila += dados[faceValue]
+    cubic.fila = ''
+   
+    for (let i = 1; i <= document.getElementById('input').value; i++) {
+      faceValue = Math.floor(Math.random() * 6)
+      cubic.sum += faceValue + 1
+      cubic.fila += dados[faceValue]
     }
-    return fila
+    return cubic
   }
+
+  }
+  restart()
 })
